@@ -1,3 +1,4 @@
+%tensorflow_version 2.x  # this line is not required unless you are in a notebook
 from __future__ import absolute_import, division, print_function, unicode_literals
 from xml.sax.handler import feature_external_ges
 import tensorflow as tf
@@ -6,10 +7,10 @@ import pandas as pd
 CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth', 'PedalLength', 'PedalWidth', 'Species']
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 
-train_path = tf.keras.utils.get_files(
-  "iris_training.csv", "https://storage.googleapis.com/dowload.tenserflow.org/data/iris_training.csv")
-test_path = tf.keras.utils.get_files(
-  "iris_test.csv", "https://storage.googleapis.com/dowload.tenserflow.org/data/iris_test.csv")
+train_path = tf.keras.utils.get_file(
+    "iris_training.csv", "https://storage.googleapis.com/download.tensorflow.org/data/iris_training.csv")
+test_path = tf.keras.utils.get_file(
+    "iris_test.csv", "https://storage.googleapis.com/download.tensorflow.org/data/iris_test.csv")
 
 #we use keras to grab our datasets and read them into a panda dataframe
 train = pd.read_csv(train_path, names=CSV_COLUMN_NAMES, header=0)
@@ -42,10 +43,9 @@ print(my_feature_columns)
 classifier = tf.estimator.DNNClassifier(
   feature_columns = my_feature_columns,
   #two hidden layers of 30 and 10 nodes respectively, this is arbitrary and is to good to be played with
-  hidden_units=hidden_units[30, 10],
+  hidden_units=[30, 10],
   #the model must choose between 3 classes
-  n_classes=3
-)
+  n_classes=3)
 
 #training
 classifier.train(
@@ -57,6 +57,8 @@ eval_result = classifier.evaluate(
   input_fn=lambda: input_fn(test, test_y, training=False))
 
 print('\nTest set {accuracy:0.3f}\n'.format(**eval_result))
+
+
 
 #using the model to make predictions
 def input_fn(features, batch_size=256):
@@ -75,8 +77,7 @@ for feature in features:
 
 predictions = classifier.predict(input_fn=lambda: input_fn(predict))
 for pred_dict in predictions:
-  class_id = pred_dict['class_ids'[0]]
+  class_id = pred_dict['class_ids'][0]
   probability = pred_dict['probabilities'][class_id]
 
-  print('Prediction is "{}" ({:.lf}%)'.format(SPECIES[class_id], 100*probability))
-
+  print('Prediction is "{}" ({:.1f}%)'.format(SPECIES[class_id], 100*probability))
