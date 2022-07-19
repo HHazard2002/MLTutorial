@@ -28,3 +28,27 @@ IMG_INDEX = 8
 plt.imshow(train_images[IMG_INDEX], cmap=plt.cm.binary)
 plt.xlabel(class_names[train_labels[IMG_INDEX][0]])
 plt.show()
+
+#CNN architecture
+#often a stack of conv2D and maxpooling2D followed by dense layers
+#the first two extract the features from the image then these features are flattened and fed to the other layers
+#which determine the class based on the presence of features
+
+#building the convolutional base
+model = models.Sequential()
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3,3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
+#layer 1, input shape of the data is 32, 32, 3, we process 32 filter of size 3x3
+# we also apply relu to the output of each convolution operation
+
+#layer 2, this layer perform max pooling which will reduce the size by 2
+
+#other layers, conv2d number of filter is doubled because the size of the data has been reduced and thus requires less computational power
+
+model.summary()
+
+#depth of the image increases but spacial dimensions reduce drastically
