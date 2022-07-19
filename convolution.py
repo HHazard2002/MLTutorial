@@ -58,3 +58,10 @@ model.summary()
 model.add(layers.Flatten())
 model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(10))
+
+#training
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+
+history = model.fit(train_images, train_labels, epochs=4, validation_data=(test_images, test_labels))
