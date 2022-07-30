@@ -31,3 +31,13 @@ def format_example(image, label):
   image = tf.image.resize(image, (IMG_SIZE, IMG_SIZE))
   return image, label
 
+#we can apply this function to all our data using map()
+train = raw_train.map(format_example)
+validatation = raw_validation.map(format_example)
+test = raw_test.map(format_example)
+
+for image, label in train.take(2):
+  plt.figure()
+  plt.imshow(image)
+  plt.title(get_label_name(label))
+
