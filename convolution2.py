@@ -16,3 +16,9 @@ tfds.disable_progress_bar()
   as_supervised=True)
 
 get_label_name = metadata.features['label'].int2str #creates a function object that we can use to get the labels
+
+#display 2 images from the dataset
+for image, label in raw_train.take(5):
+  plt.figure()
+  plt.imshow(image)
+  plt.title(get_label_name(label))
