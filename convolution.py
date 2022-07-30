@@ -84,3 +84,10 @@ datagen = ImageDataGenerator(
   zoom_range=0.2,
   horizontal_flip=True,
   fill_mode='nearest')
+
+#pick an image to transform
+test_img = train_images[20]
+img = image.img_to_array(test_img) #convert image to numpy array
+img = img.reshape((1,)+img.shape) #reshape image
+
+i = 0
