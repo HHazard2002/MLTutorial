@@ -22,3 +22,12 @@ for image, label in raw_train.take(5):
   plt.figure()
   plt.imshow(image)
   plt.title(get_label_name(label))
+
+IMG_SIZE = 160 #all images will be resized to  160x160
+
+def format_example(image, label):
+  image = tf.cast(image, tf.float32)
+  image = (image/127.5) - 1
+  image = tf.image.resize(image, (IMG_SIZE, IMG_SIZE))
+  return image, label
+
