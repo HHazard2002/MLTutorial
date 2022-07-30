@@ -41,3 +41,10 @@ for image, label in train.take(2):
   plt.imshow(image)
   plt.title(get_label_name(label))
 
+#finally we shuffle and batch the image
+BATCH_SIZE = 32
+SHUFFLE_BUFFER_SIZE = 1000
+
+train_batches = train.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
+validation_batches = validatation.batch(BATCH_SIZE)
+test_batches = test.batch(BATCH_SIZE)
