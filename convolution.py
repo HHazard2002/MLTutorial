@@ -91,3 +91,12 @@ img = image.img_to_array(test_img) #convert image to numpy array
 img = img.reshape((1,)+img.shape) #reshape image
 
 i = 0
+
+#this loops run forever until we break, saving images to current directory with specified prefix
+for batch in datagen.flow(img, save_prefic='test', save_format='jpeg'):
+  plt.figure(i)
+  plot = plt.imgshow(image.img_to_array(batch[0]))
+  i += 1
+  if i > 4: #show for images
+    break
+plt.show()
