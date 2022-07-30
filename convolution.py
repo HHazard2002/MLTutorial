@@ -69,3 +69,18 @@ history = model.fit(train_images, train_labels, epochs=4, validation_data=(test_
 #evaluation
 test_loss, test_acc = model.evaluate(test_images, test_labels, verbose = 2)
 print(test_acc)
+
+
+from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator
+
+#create a data generator object that transforms images
+
+datagen = ImageDataGenerator(
+  rotation_range=40,
+  width_shift_range=0.2,
+  height_shift_range=0.2,
+  shear_range=0.2,
+  zoom_range=0.2,
+  horizontal_flip=True,
+  fill_mode='nearest')
