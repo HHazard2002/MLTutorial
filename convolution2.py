@@ -92,3 +92,10 @@ model = tf.keras.Sequential([
 ])
 
 model.summary()
+
+#training the model
+base_learning_rate = 0.0001
+model.compile(
+  optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
+  loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+  metrics=['accuracy'])
