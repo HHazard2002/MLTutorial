@@ -99,3 +99,9 @@ model.compile(
   optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
   loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
   metrics=['accuracy'])
+
+#we can evaluate the model to see how it does before training it on our own images
+initial_epochs = 3
+validation_steps = 20
+
+loss0, accuracy0 = model.evaluate(validation_batches, steps=validation_steps)
