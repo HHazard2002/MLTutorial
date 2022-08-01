@@ -64,3 +64,9 @@ base_model = tf.keras.applications.MobileNetV2(
   weights='imagenet')
 
 base_model.summary()
+
+for image, _ in train_batches.take(1):
+  pass
+
+feature_batch = base_model(image)
+print(feature_batch.shape)
