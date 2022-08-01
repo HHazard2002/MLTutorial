@@ -48,3 +48,11 @@ SHUFFLE_BUFFER_SIZE = 1000
 train_batches = train.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
 validation_batches = validatation.batch(BATCH_SIZE)
 test_batches = test.batch(BATCH_SIZE)
+
+for img, label in raw_train.take(2):
+  print("Original shape:", img.shape)
+
+for img, label in train.take(2):
+  print("New shape:", img.shape)
+
+IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
