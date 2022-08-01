@@ -70,3 +70,7 @@ for image, _ in train_batches.take(1):
 
 feature_batch = base_model(image)
 print(feature_batch.shape)
+
+#freezing the base means that the weights in the base won't change during the training process
+base_model.trainable = False
+base_model.summary()
