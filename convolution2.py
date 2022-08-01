@@ -74,3 +74,12 @@ print(feature_batch.shape)
 #freezing the base means that the weights in the base won't change during the training process
 base_model.trainable = False
 base_model.summary()
+
+#adding our classifier
+#instead of flattening the feature map we use a global average pooling layer 
+#that will average the entire 5x5 area of each 2d feature map and return a 
+# single 1280 element vector per filter
+
+global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
+
+prediction_layer = keras.layers.Dense(1) #only one neuron because we have a binary class
