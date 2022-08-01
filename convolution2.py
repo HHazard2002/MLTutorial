@@ -83,3 +83,12 @@ base_model.summary()
 global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
 
 prediction_layer = keras.layers.Dense(1) #only one neuron because we have a binary class
+
+#combining the layers
+model = tf.keras.Sequential([
+  base_model,
+  global_average_layer,
+  prediction_layer
+])
+
+model.summary()
