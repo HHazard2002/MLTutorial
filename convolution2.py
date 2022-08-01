@@ -115,3 +115,5 @@ history = model.fit(
 acc = history.history['accuracy']
 print(acc)
 
+model.save("dogs_vs_cats.h5") #let's save the model and reload it at anytime in the future
+new_model = tf.keras.models.load_model('dogs_vs_cats.h5')
