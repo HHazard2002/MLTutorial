@@ -105,3 +105,13 @@ initial_epochs = 3
 validation_steps = 20
 
 loss0, accuracy0 = model.evaluate(validation_batches, steps=validation_steps)
+
+#let's train the model on our own images
+history = model.fit(
+  train_batches,
+  epochs=initial_epochs,
+  validation_data=validation_batches)
+
+acc = history.history['accuracy']
+print(acc)
+
