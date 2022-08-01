@@ -56,3 +56,11 @@ for img, label in train.take(2):
   print("New shape:", img.shape)
 
 IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
+
+#create the base model from the pre-trained model MobileNet V2
+base_model = tf.keras.applications.MobileNetV2(
+  input_shape=IMG_SHAPE,
+  include_top=False,
+  weights='imagenet')
+
+base_model.summary()
