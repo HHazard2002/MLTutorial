@@ -57,3 +57,8 @@ def one_hot_encoding(text):
       word_encoding += 1
 
   return encoding
+
+text = "this is a test to see if this test will work is is test a a"
+encoding = one_hot_encoding(text)
+print(encoding)
+print(vocab)
