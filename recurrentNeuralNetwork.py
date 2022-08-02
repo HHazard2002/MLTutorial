@@ -79,3 +79,17 @@ print(vocab)
 
 # Sentiment Analysis
 # process of categorizing opinions expressed in a piece of text
+
+
+from pickletools import optimize
+from keras.datasets import imdb
+from keras.preprocessing import sequence
+import keras
+import tensorflow as tf
+import os
+import numpy as np
+
+VOCAB_SIZE = 88584
+
+MAXLEN = 250
+BATCH_SIZE = 64
