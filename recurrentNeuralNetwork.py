@@ -33,3 +33,10 @@ text = "this is a test to see if this test will work is is test a a"
 bag = bag_of_words(text)
 print(bag)
 print(vocab)
+
+#2. Integer Encoding:
+# each word or character in a sentence is represented as a 
+# unique int and the order is maintained
+
+vocab = {}
+word_encoding = 1
