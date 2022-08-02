@@ -73,3 +73,9 @@ print(vocab)
 # Recurrent Neural Network work by passing words one by one (which is 
 # not feed-forward where all data is fed at once like we use to do)
 # the current word is processed in a combination with the output from the previous iteration
+
+# Long Short-Term Memory (LSTM)
+# Stores all the previous input as well as when they have been seen 
+
+# Sentiment Analysis
+# process of categorizing opinions expressed in a piece of text
