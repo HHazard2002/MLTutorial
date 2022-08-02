@@ -62,3 +62,14 @@ text = "this is a test to see if this test will work is is test a a"
 encoding = one_hot_encoding(text)
 print(encoding)
 print(vocab)
+
+#3. Word embeddings:
+# this methods keeps track of the position and encodes similar words
+# with similar labels
+# each word is encoded as a dense vector that represents its context in the sentence
+
+# we'll add a word embedding layer to the begging of our model
+
+# Recurrent Neural Network work by passing words one by one (which is 
+# not feed-forward where all data is fed at once like we use to do)
+# the current word is processed in a combination with the output from the previous iteration
