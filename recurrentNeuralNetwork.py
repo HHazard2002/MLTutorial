@@ -157,3 +157,6 @@ def predict(text):
   pred[0] = encoded_text
   result = model.predict(pred)
   print(result[0])
+
+positive_review = "That movie was great! really loved it and would greatly watch it again because it was amazingly great"
+predict(positive_review)
