@@ -93,3 +93,13 @@ VOCAB_SIZE = 88584
 
 MAXLEN = 250
 BATCH_SIZE = 64
+
+(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=VOCAB_SIZE)
+
+# Lets look at one review
+train_data[1]
+
+# more preprocessing (triming if more than 250 words, adding zeros if less)
+
+train_data = sequence.pad_sequences(train_data, MAXLEN)
+test_data = sequence.pad_sequences(test_data, MAXLEN)
