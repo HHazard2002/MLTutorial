@@ -103,3 +103,13 @@ train_data[1]
 
 train_data = sequence.pad_sequences(train_data, MAXLEN)
 test_data = sequence.pad_sequences(test_data, MAXLEN)
+
+# Creating the model
+
+model = tf.keras.Sequential([
+  tf.keras.layers.Embedding(VOCAB_SIZE, 32),
+  tf.keras.layers.LSTM(32),
+  tf.keras.layers.Dense(1, activation="sigmoid")
+])
+
+model.summary()
