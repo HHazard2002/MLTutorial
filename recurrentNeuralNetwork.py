@@ -135,3 +135,16 @@ def encode_text(text):
 text = "that movie was just amazing, so amazing"
 encoded = encode_text(text)
 print(encoded)
+
+reverse_word_index = {value: key for (key, value) in word_index.items()}
+
+def decode_integers(integers):
+  PAD = 0
+  text = ""
+  for num in integers:
+    if num != PAD:
+      text += reverse_word_index[num] + " "
+
+  return text[:-1]
+
+print(decode_integers(encoded))
