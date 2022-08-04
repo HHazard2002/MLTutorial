@@ -160,3 +160,6 @@ def predict(text):
 
 positive_review = "That movie was great! really loved it and would greatly watch it again because it was amazingly great"
 predict(positive_review)
+
+negative_review = "That movie really sucked. I hated it and wouldn't watch it again. Was one of the worst things I've ever watched"
+predict(negative_review)
