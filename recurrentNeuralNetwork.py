@@ -113,3 +113,8 @@ model = tf.keras.Sequential([
 ])
 
 model.summary()
+
+# Training
+model.compile(loss="binary_crossentropy", optimizer="rmrsprop", metrics=['acc'])
+
+history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2)
