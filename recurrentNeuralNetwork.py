@@ -148,3 +148,12 @@ def decode_integers(integers):
   return text[:-1]
 
 print(decode_integers(encoded))
+
+# prediction
+
+def predict(text):
+  encoded_text = encode_text(text)
+  pred = np.zeros((1, 250))
+  pred[0] = encoded_text
+  result = model.predict(pred)
+  print(result[0])
