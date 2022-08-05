@@ -50,3 +50,10 @@ examples_per_epoch = len(text)//(seq_length+1)
 
 # create training examples/targets
 char_dataset = tf.data.Dataset.from_tensor_slices(text_as_int)
+
+def split_input_target(chunk):
+  input_text = chunk[:-1]
+  target_text = chunk[1:]
+  return input_text, target_text
+
+dataset = sequences.map(split_input_target)
