@@ -27,3 +27,8 @@ vocab = sorted(set(text))
 #Creating a mapping from unique characters to indices
 char2idx = {u:i for i, u in enumerate(vocab)}
 idx2char = np.array(vocab)
+
+def text_to_int(text):
+  return np.array([char2idx[c] for c in text])
+
+text_as_int = text_to_int(text)
