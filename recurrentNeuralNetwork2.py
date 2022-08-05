@@ -44,3 +44,9 @@ def int_to_text(ints):
   return ''.join(idx2char[ints])
 
 print(int_to_text(text_as_int[:13]))
+
+seq_length = 100 # length of sequence for a training example
+examples_per_epoch = len(text)//(seq_length+1)
+
+# create training examples/targets
+char_dataset = tf.data.Dataset.from_tensor_slices(text_as_int)
