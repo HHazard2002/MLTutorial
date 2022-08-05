@@ -57,3 +57,10 @@ def split_input_target(chunk):
   return input_text, target_text
 
 dataset = sequences.map(split_input_target)
+
+for x, y in dataset.take(2):
+  print("\n\nExample\n")
+  print("Input")
+  print(int_to_text(x))
+  print("\nOutput")
+  print(int_to_text(y))
