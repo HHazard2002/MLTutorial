@@ -23,3 +23,7 @@ print(text[:250])
 # Encoding
 # Each unique character will be encoded as a different integer
 vocab = sorted(set(text))
+
+#Creating a mapping from unique characters to indices
+char2idx = {u:i for i, u in enumerate(vocab)}
+idx2char = np.array(vocab)
