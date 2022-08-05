@@ -32,3 +32,15 @@ def text_to_int(text):
   return np.array([char2idx[c] for c in text])
 
 text_as_int = text_to_int(text)
+
+print("Text:", text[:13])
+print("Encoded:", text_to_int(text[:13]))
+
+def int_to_text(ints):
+  try:
+    ints = ints.numpy()
+  except:
+    pass
+  return ''.join(idx2char[ints])
+
+print(int_to_text(text_as_int[:13]))
