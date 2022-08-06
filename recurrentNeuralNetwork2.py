@@ -93,3 +93,9 @@ def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
 
 model = build_model(VOCAB_SIZE, EMBEDDING_DIM, RNN_UNITS, BATCH_SIZE)
 model.summary()
+
+# Creating a loss function
+
+for input_example_batch, target_example_batch in data.take(1):
+  example_batch_predictions = model(input_example_batch) #asks our model for a prediction on our first batch of training data
+  print(example_batch_predictions.shape, "#(batch_size, sequence_length, vocab_size")
