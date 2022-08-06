@@ -72,3 +72,7 @@ VOCAB_SIZE = len(vocab)
 EMBEDDING_DIM = 256
 RNN_UNITS = 1024
 
+# Buffer size to shuffle the dataset
+# (TF data is designed to work with possibly infinite sequences,
+# so it does't attempt to shuffle the entire sequence in memory. Instead,
+# it maintains a buffer in which it shuffles elements).
