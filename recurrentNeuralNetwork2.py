@@ -90,3 +90,6 @@ def build_model(vocab_size, embedding_dim, rnn_units, batch_size):
     tf.keras.layers.Dense(vocab_size)
   ])
   return model
+
+model = build_model(VOCAB_SIZE, EMBEDDING_DIM, RNN_UNITS, BATCH_SIZE)
+model.summary()
