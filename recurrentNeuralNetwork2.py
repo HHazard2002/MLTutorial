@@ -76,3 +76,7 @@ RNN_UNITS = 1024
 # (TF data is designed to work with possibly infinite sequences,
 # so it does't attempt to shuffle the entire sequence in memory. Instead,
 # it maintains a buffer in which it shuffles elements).
+
+BUFFER_SIZE = 10000
+
+data = dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE, drop_remainder=True)
