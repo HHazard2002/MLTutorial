@@ -1,7 +1,6 @@
 # RNN Play Generator
 from pickletools import optimize
 from syslog import LOG_SYSLOG
-from convolutional2 import BATCH_SIZE
 from keras.preprocessing import sequence
 import keras
 import tensorflow as tf
@@ -66,3 +65,10 @@ for x, y in dataset.take(2):
   print(int_to_text(x))
   print("\nOutput")
   print(int_to_text(y))
+
+# making training batches
+BATCH_SIZE = 64
+VOCAB_SIZE = len(vocab)
+EMBEDDING_DIM = 256
+RNN_UNITS = 1024
+
