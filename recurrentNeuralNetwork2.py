@@ -119,3 +119,4 @@ sampled_indices = tf.random.categorical(pred, num_samples=1)
 sampled_indices = np.reshape(sampled_indices, (1, -1))[0]
 predicted_chars = int_to_text(sampled_indices)
 
+predicted_chars # and this is what the model predicted for training sequence 1
