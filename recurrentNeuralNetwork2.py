@@ -99,3 +99,6 @@ model.summary()
 for input_example_batch, target_example_batch in data.take(1):
   example_batch_predictions = model(input_example_batch) #asks our model for a prediction on our first batch of training data
   print(example_batch_predictions.shape, "#(batch_size, sequence_length, vocab_size")
+
+print(len(example_batch_predictions))
+print(example_batch_predictions)
