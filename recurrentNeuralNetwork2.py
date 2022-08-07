@@ -111,3 +111,6 @@ print(pred)
 time_pred = pred[0]
 print(len(time_pred))
 print(time_pred)
+
+# to determine the predicted character we need to sample the output distribution (pick a value based on probability)
+sampled_indices = tf.random.categorical(pred, num_samples=1)
