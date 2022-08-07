@@ -126,3 +126,6 @@ def loss(labels, logits):
 
 # Compiling the model
 model.compile(optimizer='adam', loss=loss)
+
+# Creating checkpoints
+checkpoint_dir = './training_checkpoints'
