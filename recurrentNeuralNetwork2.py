@@ -102,3 +102,8 @@ for input_example_batch, target_example_batch in data.take(1):
 
 print(len(example_batch_predictions))
 print(example_batch_predictions)
+
+pred = example_batch_predictions[0]
+print(len(pred))
+print(pred)
+# we get a 2D array of length 100, each interior array is the prediction for the next character at each time step
