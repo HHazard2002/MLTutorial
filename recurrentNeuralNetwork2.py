@@ -114,3 +114,8 @@ print(time_pred)
 
 # to determine the predicted character we need to sample the output distribution (pick a value based on probability)
 sampled_indices = tf.random.categorical(pred, num_samples=1)
+
+# now we can reshape that array and convert all the integers to numbers to see the actual characters
+sampled_indices = np.reshape(sampled_indices, (1, -1))[0]
+predicted_chars = int_to_text(sampled_indices)
+
