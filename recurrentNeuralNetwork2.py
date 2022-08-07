@@ -123,3 +123,6 @@ predicted_chars # and this is what the model predicted for training sequence 1
 
 def loss(labels, logits):
   return tf.keras.losses.sparse_categorical_crossentropy(labels, logits, from_logits=True)
+
+# Compiling the model
+model.compile(optimizer='adam', loss=loss)
