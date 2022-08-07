@@ -120,3 +120,6 @@ sampled_indices = np.reshape(sampled_indices, (1, -1))[0]
 predicted_chars = int_to_text(sampled_indices)
 
 predicted_chars # and this is what the model predicted for training sequence 1
+
+def loss(labels, logits):
+  return tf.keras.losses.sparse_categorical_crossentropy(labels, logits, from_logits=True)
