@@ -136,3 +136,6 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
   filepath=checkpoint_prefix,
   save_weights_only=True
 )
+
+# Training
+history = model.fit(data, epochs=50, callbacks=[checkpoint_callback])
