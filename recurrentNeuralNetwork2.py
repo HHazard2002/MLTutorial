@@ -146,3 +146,6 @@ model = build_model(VOCAB_SIZE, EMBEDDING_DIM, RNN_UNITS, batch_size=1)
 # we find the latest checkpoint that stores the models weights using the following function
 model.load_weights(tf.train.latest_checkpoint(checkpoint_dir))
 model.build(tf.TensorShape([1, None]))
+
+# Generating text
+def generate_text(model, start_string):
