@@ -131,3 +131,8 @@ model.compile(optimizer='adam', loss=loss)
 checkpoint_dir = './training_checkpoints'
 # Name of the checkpoint files
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt_{epoch}")
+
+checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+  filepath=checkpoint_prefix,
+  save_weights_only=True
+)
