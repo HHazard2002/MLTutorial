@@ -149,3 +149,8 @@ model.build(tf.TensorShape([1, None]))
 
 # Generating text
 def generate_text(model, start_string):
+
+  # Evaluation step (generating text using the learned model)
+
+  # Number of characters to generate
+  num_generate = 800
