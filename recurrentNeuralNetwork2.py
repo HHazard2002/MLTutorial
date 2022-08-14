@@ -139,3 +139,6 @@ checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 
 # Training
 history = model.fit(data, epochs=50, callbacks=[checkpoint_callback])
+
+# loading the model
+model = build_model(VOCAB_SIZE, EMBEDDING_DIM, RNN_UNITS, batch_size=1)
