@@ -161,3 +161,8 @@ def generate_text(model, start_string):
 
   # Empty string to store our results
   text_generated = []
+
+  # Low temperatures results in more predictable text.
+  # Higher temperatures results in more surprising text.
+  # Experiment to find the best setting.
+  temperature = 1.0
