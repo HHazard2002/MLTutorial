@@ -154,3 +154,7 @@ def generate_text(model, start_string):
 
   # Number of characters to generate
   num_generate = 800
+
+  # Converting our start string to numbers (vectorizing)
+  input_eval = [char2idx[s] for s in start_string]
+  input_eval = tf.expand_dims(input_eval, 0)
