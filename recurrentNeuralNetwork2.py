@@ -173,3 +173,6 @@ def generate_text(model, start_string):
   for i in range(num_generate):
     predictions = model(input_eval)
     predictions = tf.squeeze(predictions, 0)
+
+    # using a categorical distribution to predict the character returned by the model
+    predictions = predictions / temperature
