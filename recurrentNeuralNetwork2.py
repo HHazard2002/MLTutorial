@@ -169,3 +169,5 @@ def generate_text(model, start_string):
 
   # Here batch.size == 1
   model.reset_states()
+
+  for i in range(num_generate):
