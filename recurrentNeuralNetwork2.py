@@ -171,3 +171,5 @@ def generate_text(model, start_string):
   model.reset_states()
 
   for i in range(num_generate):
+    predictions = model(input_eval)
+    predictions = tf.squeeze(predictions, 0)
