@@ -182,3 +182,5 @@ def generate_text(model, start_string):
     # along with the previous hidden state
     input_eval = tf.expand_dims([predicted_id], 0)
 
+    text_generated.append(idx2char[predicted_id])
+
