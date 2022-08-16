@@ -187,3 +187,4 @@ def generate_text(model, start_string):
     return (start_string + ''.join(text_generated))
 
 inp = input("Type a starting string: ")
+print(generate_text(model, inp))
