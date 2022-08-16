@@ -180,4 +180,5 @@ def generate_text(model, start_string):
 
     # We pass the predicted character as the next input to the model
     # along with the previous hidden state
-    
+    input_eval = tf.expand_dims([predicted_id], 0)
+
