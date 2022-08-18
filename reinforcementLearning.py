@@ -21,3 +21,8 @@
 # We use a matrix which represents the agent expected reward
 # The agent learns by exploring the env and observing the outcome/reward from each action
 # It will gradually start relying more heavily on what he has previously learnt
+
+# The formula used to update the Q-Table afer each action is as follow
+#Q[state,action]=Q[state,action]+α∗(reward+γ∗max(Q[newState,:])−Q[state,action]) 
+#α stands for the Learning Rate (How big the change each update has)
+#γ stands for the Discount Factor (How much focus is put on the current and future reward)
