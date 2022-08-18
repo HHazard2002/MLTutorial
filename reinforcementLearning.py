@@ -12,3 +12,7 @@
 # Action:
 # Any interaction between the agent and the env, it may change the state of the agent
 # Even not doing nothing is considered an action
+
+# Reward:
+# Every action taken will result in a reward of some magnitude (+ or -)
+# The goal of the agent will be to maximize its reward.
