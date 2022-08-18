@@ -26,3 +26,5 @@
 #Q[state,action]=Q[state,action]+α∗(reward+γ∗max(Q[newState,:])−Q[state,action]) 
 #α stands for the Learning Rate (How big the change each update has)
 #γ stands for the Discount Factor (How much focus is put on the current and future reward)
+
+import gym
