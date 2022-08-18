@@ -16,3 +16,8 @@
 # Reward:
 # Every action taken will result in a reward of some magnitude (+ or -)
 # The goal of the agent will be to maximize its reward.
+
+# Q-Learning
+# We use a matrix which represents the agent expected reward
+# The agent learns by exploring the env and observing the outcome/reward from each action
+# It will gradually start relying more heavily on what he has previously learnt
