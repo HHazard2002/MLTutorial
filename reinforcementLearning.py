@@ -36,3 +36,6 @@ print(env.action_space.n) #gets number of actions
 env.reset()
 
 action = env.action_space.sample() #gets a random action
+
+new_state, reward, done, info = env.step(action) #take action
+env.render() #renders the gui for the env
