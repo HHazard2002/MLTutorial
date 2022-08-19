@@ -46,3 +46,4 @@ import time
 env = gym.make('FrozenLake-v0')
 
 STATES = env.observation_space.n
+ACTIONS = env.action_space.n
