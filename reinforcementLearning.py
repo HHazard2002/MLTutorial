@@ -28,3 +28,7 @@
 #γ stands for the Discount Factor (How much focus is put on the current and future reward)
 
 import gym
+
+env = gym.make('FrozenLake-v0')
+print(env.observation_space.n) #gets the number of states
+print(env.action_space.n) #gets number of actions
