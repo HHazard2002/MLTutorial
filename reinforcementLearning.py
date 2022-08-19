@@ -34,3 +34,5 @@ print(env.observation_space.n) #gets the number of states
 print(env.action_space.n) #gets number of actions
 
 env.reset()
+
+action = env.action_space.sample() #gets a random action
