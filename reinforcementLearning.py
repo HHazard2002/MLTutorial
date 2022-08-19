@@ -42,3 +42,5 @@ env.render() #renders the gui for the env
 
 import numpy as np
 import time
+
+env = gym.make('FrozenLake-v0')
