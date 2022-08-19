@@ -47,3 +47,5 @@ env = gym.make('FrozenLake-v0')
 
 STATES = env.observation_space.n
 ACTIONS = env.action_space.n
+
+Q = np.zeros((STATES, ACTIONS)) #creates a matrix with all 0 values
