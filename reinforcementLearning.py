@@ -60,3 +60,6 @@ RENDER = True
 
 #Picking an action
 epsilon = 0.9 #90% chance of choosing a random action
+
+if np.random.uniform(0, 1) < epsilon: # we will check if a randomly selected value is less than epsilon
+  action = env.action_space.sample() #take random action
