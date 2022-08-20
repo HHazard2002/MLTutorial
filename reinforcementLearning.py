@@ -57,3 +57,6 @@ LEARNING_RATE = 0.81
 GAMMA = 0.96
 
 RENDER = True
+
+#Picking an action
+epsilon = 0.9 #90% chance of choosing a random action
