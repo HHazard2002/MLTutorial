@@ -63,3 +63,5 @@ epsilon = 0.9 #90% chance of choosing a random action
 
 if np.random.uniform(0, 1) < epsilon: # we will check if a randomly selected value is less than epsilon
   action = env.action_space.sample() #take random action
+else:
+  action = np.argmax(Q[state,:]) # we use the Q table to make an action
