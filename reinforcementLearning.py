@@ -49,3 +49,5 @@ STATES = env.observation_space.n
 ACTIONS = env.action_space.n
 
 Q = np.zeros((STATES, ACTIONS)) #creates a matrix with all 0 values
+
+EPISODES = 2000 #how many times to run the environment
