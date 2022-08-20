@@ -54,3 +54,4 @@ EPISODES = 2000 #how many times to run the environment
 MX_STEPS = 100 #max numbers of steps for each run
 
 LEARNING_RATE = 0.81
+GAMMA = 0.96
