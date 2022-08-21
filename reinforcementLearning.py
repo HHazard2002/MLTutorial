@@ -65,3 +65,6 @@ if np.random.uniform(0, 1) < epsilon: # we will check if a randomly selected val
   action = env.action_space.sample() #take random action
 else:
   action = np.argmax(Q[state,:]) # we use the Q table to make an action
+
+# Updating Q Values
+Q[state, action] = Q[state, action] + LEARNING_RATE * (reward + GAMMA * np.max(Q[new_state, :]) - Q[state, action])
