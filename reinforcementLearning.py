@@ -74,3 +74,4 @@ rewards = []
 for episode in range(EPISODES):
 
   state = env.reset()
+  for _ in range(MAX_STEPS):
