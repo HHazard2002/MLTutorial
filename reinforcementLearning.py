@@ -72,3 +72,5 @@ Q[state, action] = Q[state, action] + LEARNING_RATE * (reward + GAMMA * np.max(Q
 rewards = []
 
 for episode in range(EPISODES):
+
+  state = env.reset()
