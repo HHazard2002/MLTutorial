@@ -68,3 +68,5 @@ else:
 
 # Updating Q Values
 Q[state, action] = Q[state, action] + LEARNING_RATE * (reward + GAMMA * np.max(Q[new_state, :]) - Q[state, action])
+
+rewards = []
