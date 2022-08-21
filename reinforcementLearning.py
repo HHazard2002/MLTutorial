@@ -70,3 +70,5 @@ else:
 Q[state, action] = Q[state, action] + LEARNING_RATE * (reward + GAMMA * np.max(Q[new_state, :]) - Q[state, action])
 
 rewards = []
+
+for episode in range(EPISODES):
