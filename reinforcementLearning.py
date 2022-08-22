@@ -82,3 +82,5 @@ for episode in range(EPISODES):
       action = env.action_space.sample()
     else:
       action = np.argmax(Q[state, :])
+    
+    next_state
