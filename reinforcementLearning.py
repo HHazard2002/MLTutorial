@@ -79,3 +79,4 @@ for episode in range(EPISODES):
     if RENDER:
       env.render()
     if np.random.uniform(0, 1) < epsilon:
+      action = env.action_space.sample()
