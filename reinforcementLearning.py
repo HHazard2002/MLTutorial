@@ -81,3 +81,4 @@ for episode in range(EPISODES):
     if np.random.uniform(0, 1) < epsilon:
       action = env.action_space.sample()
     else:
+      action = np.argmax(Q[state, :])
