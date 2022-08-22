@@ -80,3 +80,4 @@ for episode in range(EPISODES):
       env.render()
     if np.random.uniform(0, 1) < epsilon:
       action = env.action_space.sample()
+    else:
